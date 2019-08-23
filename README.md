@@ -39,3 +39,7 @@ There are a variety of other sources which can be analyized with natural languag
 - React.js user interface
 - MySQL DB
 - ... Add remaining
+
+## System Architecture (Unoffical)
+
+![System Diagram (Unoffical)](https://github.com/matmill5/SentimentAnalysis/blob/master/CapstoneSystemArch.jpg)
