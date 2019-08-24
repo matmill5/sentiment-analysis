@@ -5,9 +5,9 @@
 - [Swagger.io](https://swagger.io/)
 - Others?...
 ## User Interface Design/Creation
-[React.js](https://reactjs.org/)
-[Vue.js](https://vuejs.org/)
-[Angular.js](https://angular.io/) <- my favorite
+- [React.js](https://reactjs.org/)
+- [Vue.js](https://vuejs.org/)
+- [Angular.js](https://angular.io/) <- my favorite
 ## Db Systems
 - MySql
 - others?...
