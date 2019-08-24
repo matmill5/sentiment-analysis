@@ -42,12 +42,12 @@ There are a variety of other sources which can be analyized with natural languag
 
 ## Relevant Links:
 
-[Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing)
-[Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
-[Vader Sentiment](https://github.com/cjhutto/vaderSentiment)
-[MonkeyLearn API](https://monkeylearn.com/)
-[Github.com/words](https://github.com/words)
-[Natural Language Toolkit](https://www.nltk.org/)
+- [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing)
+- [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
+- [Vader Sentiment](https://github.com/cjhutto/vaderSentiment)
+- [MonkeyLearn API](https://monkeylearn.com/)
+- [Github.com/words](https://github.com/words)
+- [Natural Language Toolkit](https://www.nltk.org/)
 
 ## System Architecture (Unoffical)
 
