@@ -1,7 +1,7 @@
 # SentimentAnalysis
 
 ## Project URL
-[Live Web App](capstone.pythonanywhere.com)
+[Live Web App](https://capstone.pythonanywhere.com)
 
 ## TODO List
 
