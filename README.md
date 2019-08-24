@@ -51,4 +51,4 @@ There are a variety of other sources which can be analyized with natural languag
 
 ## System Architecture (Unoffical)
 
-![System Diagram (Unoffical)](https://github.com/matmill5/SentimentAnalysis/blob/master/CapstoneSystemArch.jpg)
+![System Diagram (Unoffical)](https://github.com/matmill5/SentimentAnalysis/blob/master/doc/CapstoneSystemArch.jpg)
