@@ -7,7 +7,7 @@
 ## User Interface Design/Creation
 - [React.js](https://reactjs.org/)
 - [Vue.js](https://vuejs.org/)
-- [Angular.js](https://angular.io/) <- my favorite
+- [Angular.js](https://angular.io/) <- my favorite.
 ## Db Systems
 - MySql
 - others?...
