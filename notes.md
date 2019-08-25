@@ -8,7 +8,8 @@
 - [React.js](https://reactjs.org/)
 - [Vue.js](https://vuejs.org/)
 - [Angular.js](https://angular.io/) <- my favorite.
-- [Vuetify](https://demos.creative-tim.com/vuetify-material-dashboard/#/dashboard?ref=vuetifyjs.com)
+- [Vuetify.js](https://demos.creative-tim.com/vuetify-material-dashboard/#/dashboard?ref=vuetifyjs.com)
+- [Nuxt.js](https://nuxtjs.org/)
 ## Db Systems
 - MySql
 - others?...
