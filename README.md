@@ -10,7 +10,8 @@
 - [ ] Identify project stakeholders
 - [ ] Setup python anywhere server
 - [ ] Setup local file-directory structure
-- [ ] Setup remote request processing server
+- [ ] Design ER diagrams
+- [ ] Setup remote-request processing server
 - [ ] Setup remote databases, myDB and kentDB
 - [ ] Design processing-server's program logic (high-level, has many subtasks)
 - [ ] Implement processing-server's design (high-level, has many subtasks)
