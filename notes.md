@@ -14,5 +14,8 @@
 - MySql
 - others?...
 - MySql is probably the only good option.  It's default db for python anywhere server.
+## Task Management
+[Clockify](https://clockify.me/)
+[Trello](https://trello.com/en-US)
 ## Other cool technologies
 - [Stackery](https://www.stackery.io/)
