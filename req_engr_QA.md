@@ -16,7 +16,9 @@ Examples of stakeholders are:
 
 ## Answer:
 
-- TODO
+- Twitter Data Source: Hannan(hmuhajab@kent.edu)(Potential Stakeholder)
+- NLP and Sentiment Analysis SME: Rouming Jin (rjin1@kent.edu)(Potential Stakeholder)
+- NLP and Sentiment Analysis SME: Ye Zhao (zhao@cs.kent.edu)(Potential Stakeholder)
 
 ## Question 2:
 
