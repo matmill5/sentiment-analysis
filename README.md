@@ -3,12 +3,16 @@
 ## Project URL
 [Live Web App](https://capstone.pythonanywhere.com)
 
+## Team Communication Tools
+Instant Message:  [Slack](https://slack.com/)
+
 ## TODO List
 
-- [ ] Email lab instructors about twitter-data contact
-- [ ] Email/visit Heather Michaud (lingustics)
+- [x] Email lab instructors about twitter-data contact -> Got positive confirmation from Hanan (hmuhajab@kent.edu)
+- [ ] Set meeting with Hanan to review twitter data and interview as SME
+- [x] Email/visit Heather Michaud (lingustics)
 - [ ] Identify project stakeholders
-- [ ] Setup python anywhere server
+- [x] Setup python anywhere server
 - [ ] Setup local file-directory structure
 - [ ] Design ER diagrams
 - [ ] Setup remote-request processing server
