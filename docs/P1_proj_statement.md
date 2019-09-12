@@ -28,7 +28,7 @@ Customer's Major Stakeholders:  Employer (Kent State Uni.), Clients
 
 #### Customer 2
 
-Name:  Cheng Chang Lu (maybe?)
+Name:  Dr. Khan (CS Department Chair)
 Primary Objectives:  ?
 Customer's Major Stakeholders:  ?
 
@@ -41,8 +41,8 @@ Customer's Major Stakeholders:  ?
 #### Customer 4
 
 Name:  Kent State University
-Primary Objectives:
-Customer's Major Stakeholders:
+Primary Objectives:  ?
+Customer's Major Stakeholders:  ?
 
 ## Identification of the users?
 
@@ -57,7 +57,7 @@ Typical Background and Capability:  Educated, managing types, capable of thinkin
 What They Do:  Works in an area that receives customer feedback which would normally be manually interpreted and quantified.
 
 ## Customer/user leads
-Dr. CC Lou (Comp. Sci. Dep. Chair)
+Dr. Khan (Comp. Sci. Dep. Chair)
 Tang Tang (School of journalism and comm.)
 IT Library Helpdesk
 Student Researchers
