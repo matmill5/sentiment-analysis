@@ -23,18 +23,24 @@ We want to make better, more responsive, facualty, departments, and universities
 #### Customer 1
 
 Name:  Lindsey M. Myers
-Primary Objectives:  Gain meaningful insight from customer feedback
+Primary Objectives:  Gain meaningful insight from customer (Destination Kent State parents and children) feedback
 Customer's Major Stakeholders:  Employer (Kent State Uni.), Clients
 
 #### Customer 2
 
-Name:  Cheng Chang Lu?
-Primary Objectives:  
-Customer's Major Stakeholders:
+Name:  Cheng Chang Lu (maybe?)
+Primary Objectives:  ?
+Customer's Major Stakeholders:  ?
 
 #### Customer 3
 
-Name:  ?
+Name:  Tang Tang (School of Journalism and Mass Comm.)
+Primary Objectives:  ?
+Customer's Major Stakeholders:  ?
+
+#### Customer 4
+
+Name:  Kent State University
 Primary Objectives:
 Customer's Major Stakeholders:
 
@@ -52,6 +58,7 @@ What They Do:  Works in an area that receives customer feedback which would norm
 
 ## Customer/user leads
 Dr. CC Lou (Comp. Sci. Dep. Chair)
+Tang Tang (School of journalism and comm.)
 IT Library Helpdesk
 Student Researchers
 Kent State Uni. Marketers
