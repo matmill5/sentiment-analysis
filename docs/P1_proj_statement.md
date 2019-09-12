@@ -17,12 +17,41 @@ We want to make better, more responsive, facualty, departments, and universities
 ## Identification of the customer
 
 - What is the customer's name?
-- What are the customer's objectives(internally and extenerally)
-- Who else does the customer cosnider to be a major stakeholder?
+- What are the customer's objectives (internally and extenerally)
+- Who else does the customer consider to be a major stakeholder?
+
+#### Customer 1
+
+Name:  Lindsey M. Myers
+Primary Objectives:  Gain meaningful insight from customer feedback
+Customer's Major Stakeholders:  Employer (Kent State Uni.), Clients
+
+#### Customer 2
+
+Name:  Cheng Chang Lu?
+Primary Objectives:  
+Customer's Major Stakeholders:
+
+#### Customer 3
+
+Name:  ?
+Primary Objectives:
+Customer's Major Stakeholders:
 
 ## Identification of the users?
 
 - Who?
 - How many?
-- Typical background and capability
+- Typical background and capability?
 - What do they do?
+
+Who:  Researchers, managers, anyone that wants to quantify previously unquantified written text.
+How Many:  Many, but our project has only targeted a a few (mostly our customers).
+Typical Background and Capability:  Educated, managing types, capable of thinking critically, and using technology.
+What They Do:  Works in an area that receives customer feedback which would normally be manually interpreted and quantified.
+
+## Customer/user leads
+Dr. CC Lou (Comp. Sci. Dep. Chair)
+IT Library Helpdesk
+Student Researchers
+Kent State Uni. Marketers
