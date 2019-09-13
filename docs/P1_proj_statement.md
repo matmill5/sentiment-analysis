@@ -52,7 +52,7 @@ Customer's Major Stakeholders:
 - What do they do?
 
 Who:  Researchers, managers, anyone that wants to quantify previously unquantified written text.
-How Many:  Many, but our project has only targeted a a few (mostly our customers).
+How Many:  Many, but our project has only targeted a few (mostly our customers).
 Typical Background and Capability:  Educated, managing types, capable of thinking critically, and using technology.
 What They Do:  Works in an area that receives customer feedback which would normally be manually interpreted and quantified.
 
