@@ -12,7 +12,7 @@ Currently, our customers and users are manually interpreting written text from v
 
 The problem is that manual interpretation is slow, unquantified, and prone to discrepencies in understanding between readers.  Our goal is provide automatic, programmatic, and quantifiable intepretations of written text.  The outcome is to provide our customers/users with better understanding, a stronger analytic toolset, and the ability to provide better service in their various roles.
 
-We want to make better, more responsive, facualty, departments, and universities.
+We want to make better, more responsive, faculty, departments, and universities.
 
 ## Identification of the customer
 
@@ -28,9 +28,9 @@ Customer's Major Stakeholders:  Employer (Kent State Uni.), Clients
 
 #### Customer 2
 
-Name:  Cheng Chang Lu (maybe?)
-Primary Objectives:  ?
-Customer's Major Stakeholders:  ?
+Name:  Dr. Khan (CS Department Chair)
+Primary Objectives:  Improve quality of department and course offerings
+Customer's Major Stakeholders:  Employer, Kent State University
 
 #### Customer 3
 
@@ -41,8 +41,8 @@ Customer's Major Stakeholders:  ?
 #### Customer 4
 
 Name:  Kent State University
-Primary Objectives:
-Customer's Major Stakeholders:
+Primary Objectives:  Improve upon student experiences, course offerings, and quality of course offerings
+Customer's Major Stakeholders:  The state, board of directors, customers (students), employees
 
 ## Identification of the users?
 
@@ -57,7 +57,7 @@ Typical Background and Capability:  Educated, managing types, capable of thinkin
 What They Do:  Works in an area that receives customer feedback which would normally be manually interpreted and quantified.
 
 ## Customer/user leads
-Dr. CC Lou (Comp. Sci. Dep. Chair)
+Dr. Khan (Comp. Sci. Dep. Chair)
 Tang Tang (School of journalism and comm.)
 IT Library Helpdesk
 Student Researchers
