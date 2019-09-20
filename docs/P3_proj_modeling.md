@@ -16,4 +16,4 @@
 
 ## UML
 
-A list of technologies and device we are using and why.
+A list of technologies and device we are using and why!
