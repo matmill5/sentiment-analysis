@@ -1,5 +1,7 @@
 # Elicitation Plan - Deliverable Two
 
+    See elicitation plan pdf
+    
 ## Group Members
 
 - Matthew E. Miller
@@ -7,17 +9,17 @@
 - Lucki Ratsavong
 
 ## Update Problem Statement
-
+    See elicitation plan pdf
 ## Update/Identify the Customer
-
+    See elicitation plan pdf
 ## Identify the users
-
+    See elicitation plan pdf
 ## Identify constraints imposed by the customer
-
+    See elicitation plan pdf
 ## Assumptions and Risks
-
+    See elicitation plan pdf
 ## Timeline (Ganatt Chart)
-
+    See elicitation plan pdf
 ## Interview Questions
 
 #### Customer 1 - Lindsey M Myers, M.A., Director, Marketing Strategy and Research (Destination Kent State)
