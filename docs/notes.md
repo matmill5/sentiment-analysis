@@ -10,6 +10,7 @@
 - [Angular.js](https://angular.io/) <- my favorite.
 - [Vuetify.js](https://demos.creative-tim.com/vuetify-material-dashboard/#/dashboard?ref=vuetifyjs.com)
 - [Nuxt.js](https://nuxtjs.org/)
+- [d3.js](https://github.com/d3/d3/wiki/Gallery) <- Data visualization
 ## Db Systems
 - MySql
 - others?...
