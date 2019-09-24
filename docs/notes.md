@@ -4,10 +4,11 @@
 Let me know what you think of the mock-ups so far. Feedback on anything and everything. The color schemes. The graphics. The message. How you feel or what you think when you look at it.
 
 
-![alt text](/desktop/homepage_mock1.jpeg)
-![alt text](/desktop/homepage_mock2.jpeg)
-![alt text](/desktop/input_mock.jpeg)
+![alt text](/desktop/homepage_mock1.pdf)
+![alt text](/desktop/homepage_mock2.pdf)
+![alt text](/desktop/input_mock.pdf)
 
+https://www.figma.com/file/Qij0TgLKhkCZKytTf2BvWg/Sentiment-Analysis?node-id=0%3A1
 
 ## API Design/Creation
 - [Apiary.io](https://apiary.io/) <- my favorite.
