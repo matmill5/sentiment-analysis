@@ -1,5 +1,13 @@
 # Notes
 
+## Web interface Mock-Up
+Let me know what you think of the mock-ups so far. Feedback on anything and everything. The color schemes. The graphics. The message. How you feel or what you think when you look at it.
+
+(/desktop/homepage_mock1.jpeg)
+(/desktop/homepage_mock2.jpeg)
+(/desktop/input_mock.jpeg)
+
+
 ## API Design/Creation
 - [Apiary.io](https://apiary.io/) <- my favorite.
 - [Swagger.io](https://swagger.io/)
