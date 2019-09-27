@@ -3,10 +3,9 @@
 ## Web interface Mock-Up
 Let me know what you think of the mock-ups so far. Feedback on anything and everything. The color schemes. The graphics. The message. How you feel or what you think when you look at it.
 
-
-![alt text](/luckiratsavong/desktop/homepage_mock1.png)
-![alt text](/luckiratsavong/desktop/homepage_mock2.png)
-![alt text](/luckiratsavong/desktop/input_mock.png)
+![Homepage Mock 1](/luckiratsavong/desktop/homepage_mock1.png)
+![Homepage Mock 2](/luckiratsavong/desktop/homepage_mock2.png)
+![Inputpage Mock 3](/luckiratsavong/desktop/input_mock.png)
 
 https://www.figma.com/file/Qij0TgLKhkCZKytTf2BvWg/Sentiment-Analysis?node-id=0%3A1
 
@@ -27,8 +26,10 @@ https://www.figma.com/file/Qij0TgLKhkCZKytTf2BvWg/Sentiment-Analysis?node-id=0%3
 - MySql
 - others?...
 - MySql is probably the only good option.  It's default db for python anywhere server.
+
 ## Task Management
 [Clockify](https://clockify.me/)
 [Trello](https://trello.com/en-US)
+
 ## Other cool technologies
 - [Stackery](https://www.stackery.io/)
