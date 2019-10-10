@@ -68,8 +68,34 @@
             <!-- Drag and Drop -->
             <div class="section">
                 
-                Some section, just put some standard html stuff in here.
-            
+                <center>
+                    <h1 style="margin: 0px;">Import File</h1>
+                    <form>
+                        <button class="btn btn-outline-success my-2 my-sm-0" id="custom-button">Choose a file: </button>
+                        File: <input type="file" id="myFile"><br><br>
+                        <span id="custom-text">No file chosen, yet.</span>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Import!</button>
+                    </form>
+
+                    <script>
+                        const fileBtn = document.getElementById("myFile");
+                        const customBtn = document.getElementById("custom-button");
+                        const customTxt = document.getElementById("custom-text");
+
+                        customBtn.addEventListener("click", function() {
+                            fileBtn.click();
+                        })
+
+                        fileBtn.addEventListener("change", function() {
+                            if (fileBtn.value) {
+                                customTxt.innerHTML = fileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+                            } else {
+                                customTxt.innerHTML = "No file chosen, yet."
+                            }
+                        })
+                    </script>
+                    
+                </center>            
             </div>
 
             <!-- Preview -->
