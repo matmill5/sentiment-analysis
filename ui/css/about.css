@@ -30,6 +30,11 @@ h3 {
 
 .column {
   float: left;
+  width: 25%;
+}
+
+.column_profiles {
+  float: left;
   width: 33.33%;
 }
 
@@ -42,6 +47,22 @@ h3 {
 
 img {
   padding: 10%;
+  vertical-align: top;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+video {
+  padding: 10%;
+  vertical-align: top;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.profiles {
+  padding: 5%;
   vertical-align: top;
   object-fit: contain;
   max-width: 60%;
