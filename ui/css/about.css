@@ -1,0 +1,70 @@
+#StartAnalysisBtn {
+  background-color: #FC6DAB;
+  border-color: #FC6DAB;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab', serif;
+}
+
+.navbar-brand {
+  font-family: 'Raleway', sans-serif;
+  font-size: 250%;
+  font-weight: 900;
+}
+
+.container-fluid {
+  height: 100%;
+}
+
+/*.min-100 {
+  min-height: 100%;
+}*/
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+}
+
+h3 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.column_profiles {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  padding: 10%;
+  vertical-align: top;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+video {
+  padding: 10%;
+  vertical-align: top;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.profiles {
+  padding: 5%;
+  vertical-align: top;
+  object-fit: contain;
+  max-width: 60%;
+  max-height: 60%;
+}
