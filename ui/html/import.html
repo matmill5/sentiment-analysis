@@ -1,132 +1,85 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Sentiment Analysis - Input</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sentiment Analysis - Input</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="../../static/main.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
-    </head>
+    <link rel="stylesheet" href="../css/about.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/basic.css"></script>
+    
+    
+</head>
 
+<body>
     <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="index.html">Sentiment Analysis</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-            
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Sentiment Analysis</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="#">Input</a>
-                        </li>
-                        <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="#">Log In</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign up</button>
-                    </form>
-                    </div>
-            </nav>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign up</button>
+                </form>
+            </div>
+        </nav>
     </header>
-   <body>
-        <div id="fullpage">
-            
-            <!-- Overview -->
-            <div class="section">
-                    <center>
-                            <h1 style="margin: 0px;">HOW IT WORKS</h1>
-                            <h2>Logo here</h2>
-                            <div class="row">
-                                <div class="column">
-                                    <center>Step 1: Select File</center>
-                                    <h3>Sentiment Analyzer accepts CSV, XLSX< and PDF.</h3>
-                                    <img src="../assets/images/FileDiagram.png">
-                                </div>
-                                <div class="column">
-                                    <center>Step 2: Submit file for Processing</center>
-                                    <h3>The Analyzer will process your file through our systems and will generate
-                                        a report for you.
-                                    </h3>
-                                    <img src="../assets/images/Process.png">
-                                </div>
-                                <div class="column">
-                                    <center>Step 3: Download your report!</center>
-                                    <h3>Then go on to use your data to inform your decisions! 
-                                        It's as easy as 1, 2, 3!
-                                    </h3>
-                                    <img src="../assets/images/Results.png">
-                                </div>
-                            </div>
-                    </center>
-            </div>
-
-            <!-- Drag and Drop -->
-            <div class="section">
-                
-                <center>
-                    <h1 style="margin: 0px;">Import File</h1>
-                    <form>
-                        <button class="btn btn-outline-success my-2 my-sm-0" id="custom-button">Choose a file: </button>
-                        File: <input type="file" id="myFile"><br><br>
-                        <span id="custom-text">No file chosen, yet.</span>
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Import!</button>
-                    </form>
-
-                    <script>
-                        const fileBtn = document.getElementById("myFile");
-                        const customBtn = document.getElementById("custom-button");
-                        const customTxt = document.getElementById("custom-text");
-
-                        customBtn.addEventListener("click", function() {
-                            fileBtn.click();
-                        })
-
-                        fileBtn.addEventListener("change", function() {
-                            if (fileBtn.value) {
-                                customTxt.innerHTML = fileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-                            } else {
-                                customTxt.innerHTML = "No file chosen, yet."
-                            }
-                        })
-                    </script>
-                    
-                </center>            
-            </div>
-
-            <!-- Preview -->
-            <div class="section">
-                
-                Some section, etc.
-            
-            </div>
-            
-            <!-- Send to Process -->
-            <div class="section">
-                    <center>
-                            <h1 style="margin: 0px;">Send to Process</h1>
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send to Process</button>
-                    </center>
+    <div id="fullpage">
+        <!-- Drag and Drop -->
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col min-100">
+                        <h1>Import File</h1>
+                    </div>
+                    <div class="col min-100">
+                        <form action="/file-upload"
+                            class="dropzone"
+                            id="my-awesome-dropzone">
+                            <input type="file" name="file" />
+                        </form>
+                        
+                    </div>
+                </div>
             </div>
         </div>
-        <script>
-            new fullpage('#fullpage', {
-                //options here
-                autoScrolling: true,
-                scrollHorizontally: true,
-                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-                paddingTop: '120px'
-            });
-            
-            //methods
-            fullpage_api.setAllowScrolling(false);
-        </script>
-   </body>
+    </div>
+
+    <script>
+        new fullpage('#fullpage', {
+            //options here
+            autoScrolling: true,
+            scrollHorizontally: true,
+            sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+            paddingTop: '120px'
+        });
+
+        //methods
+        fullpage_api.setAllowScrolling(false);
+    </script>
+
+    <script>
+        $('.file-upload').file_upload();
+    </script>
+</body>
 
 </html>
