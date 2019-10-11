@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+<!-- External Resources, Meta, and Title -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Sentiment Analysis - Input</title>
 
+    <!-- Fonts and Bootstrap -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/about.css">
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- External CSS-->
+    <link rel="stylesheet" href="../css/import.css">
+
+    <!-- Fullpage.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/basic.css"></script>
-    
-    
 </head>
 
+<!-- Body Content, HTML Markup -->
 <body>
+    <!-- Header - Sticky Navbar -->
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">Sentiment Analysis</a>
@@ -43,21 +46,29 @@
             </div>
         </nav>
     </header>
+    
+    <!-- Main Content-->
     <div id="fullpage">
         <!-- Drag and Drop -->
         <div class="section">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col min-100">
-                        <h1>Import File</h1>
+                <div class="container">
+                    <h1 class="text-center">Data Import</h1>
+                    <div class="row">
+                      <div class="upload-drop-zone" id="drop-zone">
+                        Drag and drop csv file here
+                      </div>
                     </div>
-                    <div class="col min-100">
-                        <form action="/file-upload"
-                            class="dropzone"
-                            id="my-awesome-dropzone">
-                            <input type="file" name="file" />
-                        </form>
-                        
+                    <div class="row">
+                    <div class="input-group">
+                        <div class="custom-file">
+                      <input class="custom-file-input" type="file" id="inputGroupFile04" accept=".csv">
+                      <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="SubmitButton">Submit</button>
+                          </div>
+                    </div>
                     </div>
                 </div>
             </div>

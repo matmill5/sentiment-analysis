@@ -1,3 +1,34 @@
+/* layout.css Style */
+.upload-drop-zone {
+  height: 200px;
+  min-width: 100%;
+  border-width: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 200px;
+  text-align: center
+}
+
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222;
+}
+
+.center {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+#SubmitButton {
+  background-color: forestgreen;
+  border-color: forestgreen;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab', serif;
+}
 #StartAnalysisBtn {
   background-color: forestgreen;
   border-color: forestgreen;
