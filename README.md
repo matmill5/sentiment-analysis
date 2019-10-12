@@ -72,8 +72,6 @@ There are a variety of other sources which can be analyized with natural languag
 - Functional Requirements
 - Non-functional requirements
 
-## Authors
-
 ## Authors:
 
 - Matthew E. Miller, Manisha Kumari, Lucki Ratsavong
