@@ -6,6 +6,12 @@
 ## Team Communication Tools
 Instant Message:  [Slack](https://slack.com/)
 
+## Authors:
+
+- Matthew E. Miller
+- Manisha Kumari
+- Lucki Ratsavong
+
 ## TODO List
 
 - [x] Email lab instructors about twitter-data contact -> Got positive confirmation from Hanan (hmuhajab@kent.edu)
@@ -65,5 +71,7 @@ There are a variety of other sources which can be analyized with natural languag
 
 - Functional Requirements
 - Non-functional requirements
-- 
-- 
+
+## Authors:
+
+- Matthew E. Miller, Manisha Kumari, Lucki Ratsavong
