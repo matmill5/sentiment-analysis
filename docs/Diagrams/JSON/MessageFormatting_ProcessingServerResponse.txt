@@ -1,0 +1,40 @@
+{
+  "transaction":{
+    "id": "0001",
+    "user": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "jdoe@kent.edu",
+      "phone": "111-000-0000",
+      "dep": "CompSci",
+      "Occupation": "Dep. Chair",
+      "userType": "Customer"
+    },
+    "body": {
+        "sentenceList": [
+          {
+          "sentenceId": "1",
+          "text": "blah",
+          "tag": "pos/neg/neu"
+          },
+          {
+          "sentenceId": "2",
+          "text": "Blahhh",
+          "tag": "pos/neg/neu"
+          },
+          {
+          "sentenceId": "3",
+          "text": "Blah Blah Blah",
+          "tag": "pos/neg/neu"
+          }]
+    },
+    "result": {
+      "complete": "bool",
+      "errors": {
+        "errorList": {
+        }
+      }
+      
+    }
+  }
+}

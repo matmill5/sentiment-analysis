@@ -24,14 +24,14 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                          <a class="nav-link my-2 my-sm-0" href="#">Input</a>
+                          <a class="nav-link my-2 my-sm-0" href="import.html">Input</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link my-2 my-sm-0" href="#">Log In</a>
+                          <a class="nav-link my-2 my-sm-0" href="login.html">Log In</a>
                         </li>
                       </ul>
                       <form class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign up</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="window.location.href = 'signup.html';">Sign up</button>
                       </form>
                     </div>
                   </nav>
@@ -44,7 +44,7 @@
                               <h2>Make sense of data.</h2>
                               <h3 style="padding-bottom: 10px;">Sentiment Analysis can transform raw textual data into meaningful
                               information.</h3>
-                              <button type="button" class="btn btn-link" id="StartAnalysisBtn">Start Your Analysis</button>
+                              <button type="button" class="btn btn-link" id="StartAnalysisBtn" onclick="window.location.href = 'import.html';">Start Your Analysis</button>
                           </div>
                           <div class="col min-100">
                           </div>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="col min-100">
                             <video controls>
-                                <source src="../assets/demoTest.mp4" type="video/mp4">
+                                <source src="../assets/videos/ThumbnailVid.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -134,8 +134,10 @@
                 <div class="row align-items-center">
                         <div class="col min-100"></div>
                         <div class="col min-100">
-                            <center><button type="button" class="btn btn-primary" id="ProceedToInput">Start Importing</button></center>
-                            </div>
+                            <form>
+                            <center><button type="button" class="btn btn-primary" id="ProceedToInput" onclick="window.location.href = 'import.html';">Start Importing</button></center>
+                            </form>    
+                        </div>
                             <div class="col min-100"></div>
                 </div>
                 </div>
