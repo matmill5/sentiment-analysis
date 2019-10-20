@@ -3,9 +3,6 @@
 ## Project URL
 [Live Web App](https://capstone.pythonanywhere.com)
 
-## Team Communication Tools
-Instant Message:  [Slack](https://slack.com/)
-
 ## Authors:
 
 - Matthew E. Miller
