@@ -12,26 +12,6 @@ Instant Message:  [Slack](https://slack.com/)
 - Manisha Kumari
 - Lucki Ratsavong
 
-## TODO List
-
-- [x] Email lab instructors about twitter-data contact -> Got positive confirmation from Hanan (hmuhajab@kent.edu)
-- [ ] Set meeting with Hanan to review twitter data and interview as SME
-- [x] Email/visit Heather Michaud (lingustics)
-- [x] Identify project stakeholders
-- [x] Setup python anywhere server
-- [ ] Setup local file-directory structure
-- [ ] Design ER diagrams
-- [ ] Setup remote-request processing server
-- [ ] Setup remote databases, myDB and kentDB
-- [ ] Design processing-server's program logic (high-level, has many subtasks)
-- [ ] Implement processing-server's design (high-level, has many subtasks)
-- [ ] Design web app, user interface
-- [ ] Implement user interface
-- [ ] Connect system components
-- [ ] Test, revise, maintain
-- [ ] Curate all supporting document
-- [ ] Create project presentation slides
-
 ## Project Description
 
 The goal of this project is to create enterpise-business value through the use of sentiment analysis.  Sentiment analysis is the process of surmising context/tone/etc from written text, it's a sub-discipline of natural language processing (NLP).  Sentiment analysis is a powerful tool for a world with increasingly digital text.
@@ -63,14 +43,29 @@ There are a variety of other sources which can be analyized with natural languag
 - [Github.com/words](https://github.com/words)
 - [Natural Language Toolkit](https://www.nltk.org/)
 
-## System Architecture (Unoffical)
+## System Architecture
 
-![System Diagram (Unoffical)](https://github.com/matmill5/SentimentAnalysis/blob/master/doc/CapstoneSystemArch.jpg)
+![System Diagram](https://github.com/matmill5/SentimentAnalysis/blob/master/docs/Diagrams/Sys Arch/CapstoneSystemArch.jpg)
 
-## Requirements Engineering
+## TODO List
 
-- Functional Requirements
-- Non-functional requirements
+- [x] Email lab instructors about twitter-data contact -> Got positive confirmation from Hanan (hmuhajab@kent.edu)
+- [x] Set meeting with Hanan to review twitter data and interview as SME
+- [x] Email/visit Heather Michaud (lingustics)
+- [x] Identify project stakeholders
+- [x] Setup python anywhere server
+- [x] Setup local file-directory structure
+- [x] Design ER diagrams
+- [ ] Setup remote-request processing server
+- [x] Setup remote databases, myDB and kentDB
+- [ ] Design processing-server's program logic (high-level, has many subtasks)
+- [ ] Implement processing-server's design (high-level, has many subtasks)
+- [x] Design web app, user interface
+- [x] Implement user interface
+- [ ] Connect system components
+- [ ] Test, revise, maintain
+- [ ] Curate all supporting document
+- [ ] Create project presentation slides
 
 ## Authors:
 
