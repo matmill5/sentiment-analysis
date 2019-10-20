@@ -42,7 +42,8 @@ There are a variety of other sources which can be analyized with natural languag
 
 ## System Architecture
 
-![System Diagram](https://github.com/matmill5/SentimentAnalysis/blob/master/docs/Diagrams/Sys Arch/CapstoneSystemArch.jpg)
+![System Diagram]
+(https://github.com/matmill5/SentimentAnalysis/blob/master/docs/Diagrams/SysArch/CapstoneSystemArch.jpg)
 
 ## TODO List
 
