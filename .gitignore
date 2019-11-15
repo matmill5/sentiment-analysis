@@ -1,3 +1,4 @@
 # ignore config files
 /.vscode
 /SentimentAnalysis
+/__pycache__
