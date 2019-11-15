@@ -9,7 +9,12 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-	
+
+#todo, finish creating the endpoints for each of the other site pages.  AND use templated addressing
+@app.route('/')
+def about():
+	return render_template('about.html')
+
 @app.route('/upload')
 def upload_form():
 	return render_template('upload.html')
