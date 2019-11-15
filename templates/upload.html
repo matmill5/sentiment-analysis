@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- External Resources, Meta, and Title -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sentiment Analysis - Input</title>
+
+    <!-- Fonts and Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- External CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='ui/css/import.css') }}">
+
+    <!-- Fullpage.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+</head>
+
+<!-- Body Content, HTML Markup -->
+
+<body>
+    <!-- Header - Sticky Navbar -->
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Sentiment Analysis</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="#">Input</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="#">Log In</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign up</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content-->
+    <div id="fullpage">
+        <!-- Drag and Drop -->
+        <div class="section">
+            <div class="container-fluid">
+                <div class="container">
+                    <h1 class="text-center">Data Import</h1>
+                    <p>
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul class=flashes>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% endwith %}
+                    </p>
+                    <div class="row">
+                        <div class="upload-drop-zone" id="drop-zone">
+                            Drag and drop csv file here
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form method="post" action="/upload" enctype="multipart/form-data">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input class="custom-file-input" type="file" id="inputGroupFile04" name="file"
+                                        autocomplete="off" required>
+                                    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <input class="btn btn-outline-secondary" type="submit" value="Submit"
+                                        id="SubmitButton">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new fullpage('#fullpage', {
+            //options here
+            autoScrolling: true,
+            scrollHorizontally: true,
+            sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+            paddingTop: '120px'
+        });
+
+        //methods
+        fullpage_api.setAllowScrolling(false);
+    </script>
+
+    <script>
+        $('.file-upload').file_upload();
+    </script>
+</body>
+
+</html>
