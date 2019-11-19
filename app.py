@@ -1,6 +1,6 @@
 from flask import Flask
 
-UPLOAD_FOLDER = 'C:/Users/Matthew/Desktop'
+UPLOAD_FOLDER = 'home/capstone/sites/SentimentAnalysis/userUpload'
 
 app = Flask(__name__)
 app.secret_key = "secret key"

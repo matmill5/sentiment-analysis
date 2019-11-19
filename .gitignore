@@ -2,3 +2,4 @@
 /.vscode
 /SentimentAnalysis
 /__pycache__
+app.py
