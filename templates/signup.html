@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-signin-client_id"
+        content="716166053466-g7cnkn98o8549ir5jobrmechhghoo8em.apps.googleusercontent.com">
+    <title>Sentiment Analysis - About</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ui/css/login.css') }}">
+    <script src="{{ url_for('static', filename='ui/js/login.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ url_for('about') }}">Sentiment Analysis</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('upload') }}">Input</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('login') }}">Log In</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="{{ url_for('signup') }}">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div id="fullpage">
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col min-100">
+                    </div>
+                    <div class="col min-100">
+                        <form id="loginForm">
+                            <!-- First and Last Name -->
+                            <div class="form-group">
+                                <label for="inputFirstName">First Name and Last Name</label>
+                                <input type="firstName" class="form-control" id="firstNameUser" aria-describedby="firstNameHelp" placeholder="Enter First and Last Name">
+                            </div>
+                            <!-- Email Address -->
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We won't share your email.</small>
+                            </div>
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="inputPassword"
+                                    placeholder="Password">
+                            </div>
+                            <!-- Confirm Password -->
+                            <div class="form-group">
+                                    <label for="exampleInputPassword1">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword"
+                                        placeholder="Confirm Password">
+                                </div>
+                            <!-- Check Me Out -->
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Subscribe To Updates</label>
+                            </div>
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="col min-100"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            new fullpage('#fullpage', {
+                //options here
+                autoScrolling: true,
+                scrollHorizontally: true,
+                sectionsColor: ['#f2f2f2', '#1E90FF', '#DC143C', '#228B22', '#FFD700'],
+                paddingTop: '120px'
+            });
+
+            //methods
+            fullpage_api.setAllowScrolling(false);
+        </script>
+</body>

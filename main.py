@@ -22,6 +22,10 @@ def login():
 def signup():
 	return render_template('signup.html')
 
+@app.route('/pricing')
+def pricing():
+	return render_template('pricing.html')
+
 @app.route('/upload')
 def upload():
 	return render_template('upload.html')
