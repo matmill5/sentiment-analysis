@@ -5,22 +5,29 @@ from app import app
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'])
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-#todo, finish creating the endpoints for each of the other site pages.  AND use templated addressing
 @app.route('/')
 def about():
 	return render_template('about.html')
 
+@app.route('/login')
+def login():
+	return render_template('login.html')
+
+@app.route('/signup')
+def signup():
+	return render_template('signup.html')
+
 @app.route('/upload')
-def upload_form():
+def upload():
 	return render_template('upload.html')
 
 @app.route('/upload', methods=['POST'])
-def upload_file():
+def upload_form():
 	if request.method == 'POST':
         # check if the post request has the file part
 		if 'file' not in request.files:
@@ -36,7 +43,7 @@ def upload_file():
 			flash('File successfully uploaded')
 			return redirect('/upload')
 		else:
-			flash('Allowed file types are txt, pdf, png, jpg, jpeg, gif')
+			flash('Allowed file types are txt, pdf, png, jpg, jpeg, gif, csv')
 			return redirect(request.url)
 
 if __name__ == "__main__":

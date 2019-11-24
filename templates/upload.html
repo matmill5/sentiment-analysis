@@ -27,7 +27,7 @@
     <!-- Header - Sticky Navbar -->
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">Sentiment Analysis</a>
+            <a class="navbar-brand" href="{{url_for('about')}}">Sentiment Analysis</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,13 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link my-2 my-sm-0" href="#">Input</a>
+                        <a class="nav-link my-2 my-sm-0" href="{{url_for('upload')}}">Input</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link my-2 my-sm-0" href="#">Log In</a>
+                        <a class="nav-link my-2 my-sm-0" href="{{url_for('login')}}">Log In</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                <form class="form-inline my-2 my-lg-0" action="{{url_for('signup')}}">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign up</button>
                 </form>
             </div>
@@ -56,17 +56,6 @@
             <div class="container-fluid">
                 <div class="container">
                     <h1 class="text-center">Data Import</h1>
-                    <p>
-                        {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                        <ul class=flashes>
-                            {% for message in messages %}
-                            <li>{{ message }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                        {% endwith %}
-                    </p>
                     <div class="row">
                         <div class="upload-drop-zone" id="drop-zone">
                             Drag and drop csv file here
@@ -76,16 +65,23 @@
                         <form method="post" action="/upload" enctype="multipart/form-data">
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input class="custom-file-input" type="file" id="inputGroupFile04" name="file"
-                                        autocomplete="off" required>
-                                    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                                    <input class="custom-file-input" type="file" id="inputGroupFile04" name="file" autocomplete="off" required>
+                                    <label id="fileUploadLabel" class="custom-file-label" for="inputGroupFile04">Choose file</label>
                                 </div>
                                 <div class="input-group-append">
-                                    <input class="btn btn-outline-secondary" type="submit" value="Submit"
-                                        id="SubmitButton">
+                                    <input class="btn btn-outline-secondary" type="submit" value="Submit"id="SubmitButton">
                                 </div>
                             </div>
                         </form>
+                        <div>
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,9 +101,10 @@
         fullpage_api.setAllowScrolling(false);
     </script>
 
-    <script>
+    <!--<script>
         $('.file-upload').file_upload();
-    </script>
+    </script>-->
+    <script src="{{url_for('static', filename='ui/js/upload.js')}}"></script>
 </body>
 
 </html>

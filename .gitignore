@@ -3,3 +3,4 @@
 /SentimentAnalysis
 /__pycache__
 app.py
+credentials.json
