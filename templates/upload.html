@@ -5,7 +5,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Sentiment Analysis - Input</title>
+    <title>Sentiment Analysis - Upload CSV</title>
 
     <!-- Fonts and Bootstrap -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -36,7 +36,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link my-2 my-sm-0" href="{{url_for('upload')}}">Input</a>
+                        <a class="nav-link my-2 my-sm-0" href="{{url_for('upload')}}">Upload CSV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{url_for('login')}}">Log In</a>

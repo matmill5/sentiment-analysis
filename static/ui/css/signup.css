@@ -1,3 +1,10 @@
+#SubmitBtn {
+  background-color: forestgreen;
+  border-color: forestgreen;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab', serif;
+}
+
 .navbar-brand {
     font-family: 'Raleway', sans-serif;
     font-size: 250%;
@@ -5,7 +12,7 @@
   }
   
   #loginForm {
-    margin-top: 100px;
+    margin-top: 10px;
   }
   
   .container-fluid {

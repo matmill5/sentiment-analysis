@@ -4,12 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="google-signin-client_id"
         content="716166053466-g7cnkn98o8549ir5jobrmechhghoo8em.apps.googleusercontent.com">
-    <title>Sentiment Analysis - About</title>
+    <title>Sentiment Analysis - Pricing</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='ui/css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ui/css/pricing.css') }}">
     <script src="{{ url_for('static', filename='ui/js/about.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
@@ -27,7 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('upload') }}">Input</a>
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('upload') }}">Upload CSV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('login') }}">Log In</a>
@@ -61,8 +64,9 @@
                                         <ul class="list-unstyled mt-3 mb-4">
                                             <li>No Support.</li>
                                         </ul>
-                                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up
-                                            for free</button>
+                                        <form action="{{ url_for('signup')}}">
+                                        <button type="submit" class="btn btn-lg btn-block btn-outline-success">Sign up for free</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="card mb-4 shadow-sm">
@@ -75,8 +79,9 @@
                                         <ul class="list-unstyled mt-3 mb-4">
                                                 <li>No Support.</li>
                                         </ul>
-                                        <button type="button" class="btn btn-lg btn-block btn-primary">Get
-                                            started</button>
+                                        <form action="{{ url_for('upload')}}">
+                                        <button type="submit" id="SubmitBtn" class="btn btn-lg btn-block btn-primary">Get started</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="card mb-4 shadow-sm">
@@ -89,8 +94,9 @@
                                         <ul class="list-unstyled mt-3 mb-4">
                                                 <li>No Support.</li>
                                         </ul>
-                                        <button type="button" class="btn btn-lg btn-block btn-primary">Contact
-                                            us</button>
+                                        <form action="{{ url_for('contact')}}">
+                                        <button type="submit" id="SubmitBtn" class="btn btn-lg btn-block btn-primary">Contact us</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

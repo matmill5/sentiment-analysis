@@ -26,6 +26,17 @@ def signup():
 def pricing():
 	return render_template('pricing.html')
 
+@app.route('/process')
+def process():
+	return render_template('process.html')
+
+@app.route('/process', methods=['POST', 'GET'])
+def do_process():
+	return "Starting data processing"
+
+@app.route('/contact')
+def contact():
+	return render_template('contact.html')
 @app.route('/upload')
 def upload():
 	return render_template('upload.html')
