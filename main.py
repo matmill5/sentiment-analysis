@@ -4,7 +4,7 @@ import urllib.request
 from app import app
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
-from vader import vaderGo
+#from vader import vaderGo
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'])
 
@@ -35,22 +35,21 @@ def process():
 def do_process():
 	return "Starting data processing"
 
-@app.route('/vader')
-def vader():
-	vaderGo()
-	return "success"
+#@app.route('/vader')
+#def vader():
+#	vaderGo()
+#	return "success"
 
-@app.route('/textblob')
-def textblob():
-	return "textblob"
+#@app.route('/textblob')
+#def textblob():
+#	return "textblob"
 
-@app.route('/ai')
-def ai():
-
-	if(successful)
-		return "success", 200
-	else
-		return "failure", 403
+#@app.route('/ai')
+#def ai():
+#	if(successful)
+#		return "success", 200
+#	else
+#		return "failure", 403
 
 @app.route('/contact')
 def contact():
