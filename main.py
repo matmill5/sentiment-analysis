@@ -36,12 +36,14 @@ def do_process():
 	return "Starting data processing"
 
 #@app.route('/vader')
-#def vader():
-#	vaderGo()
+# def vader():
+#     vaderGo()
 #	return "success"
 
 #@app.route('/textblob')
-#def textblob():
+# def textblob():
+#     textBlobGo()
+#
 #	return "textblob"
 
 #@app.route('/ai')

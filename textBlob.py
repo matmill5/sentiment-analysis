@@ -7,15 +7,17 @@ import nltk
 from nltk.tokenize import word_tokenize
 import emoji
 from emoji.unicode_codes import UNICODE_EMOJI
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from textblob import TextBlob
 import json
 import sys
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-def vaderGo(file):
+def textBlobGo(file):
+
     #loading the data into the dataframe
     data=pd.read_csv(file, encoding='utf-8')
+    
     data['text']=data.astype(str).apply(' '.join, axis=1)
     data=pd.DataFrame(data['text'])
     
@@ -25,23 +27,19 @@ def vaderGo(file):
     data=data.reset_index(drop=True)
     data['Original Text']=data['text']
 
-
     #converting emoji into the text
     import emoji
     for i in range(len(data)):
         data.loc[i,'text'] = emoji.demojize(data.loc[i,'text'])
 
 
-
     #converting special character "’" to "'" for contraction
     for i in range(len(data)):
         data.loc[i,'text']=data.loc[i,'text'].replace("’","'")
 
-    
-    
-    # sys.path.insert(0, 'path for contractions.py')
-
+    #sys.path.insert(0, 'path_contractions_1')
     from contractions_1 import CONTRACTION_MAP
+
     def expand_contractions(text, contraction_mapping=CONTRACTION_MAP):
 
         contractions_pattern = re.compile('({})'.format('|'.join(contraction_mapping.keys())), 
@@ -105,15 +103,13 @@ def vaderGo(file):
         # Substituting multiple spaces with single space
         data.loc[i,'text']  = re.sub(r'\s+', ' ', data.loc[i,'text'] , flags=re.I)
 
-
-
     # remove remaining tokens that are not alphabetic
     for i in range(len(data)):
         data.loc[i, 'text']=' '.join([x for x in data.loc[i,'text'].split() if x.isalpha()])
     
 
 
-    # remove stopwords
+
     stop_words = stopwords.words('english')
     stop_words.remove('no')
     stop_words.remove('not')
@@ -128,7 +124,7 @@ def vaderGo(file):
         data.loc[i,'text'] = ' '.join([lemmatizer.lemmatize(word,pos='v') for word in data.loc[i,'text'].split()])
         data.loc[i,'text'] = ' '.join([lemmatizer.lemmatize(word,pos='n') for word in data.loc[i,'text'].split()])
 
-   
+
 
     for i in range(len(data)):
         # remove all single characters
@@ -137,26 +133,17 @@ def vaderGo(file):
         # Substituting multiple spaces with single space
         data.loc[i,'text']  = re.sub(r'\s+', ' ', data.loc[i,'text'] , flags=re.I)
 
-    # Using VADER (Python Library) to find the sentiments of data
+
     for x in range(len(data)):
-        data_sentiment = SentimentIntensityAnalyzer()
-        data.loc[x,'Sentiment']=data_sentiment.polarity_scores(data.loc[x,'text'])['compound']
+        data_sentiment=TextBlob(data.loc[x,'text'])
+        data.loc[x,'Sentiment']=data_sentiment.sentiment.polarity
 
-
-        
     data['Sentiment_rolled']= data['Sentiment'].apply(lambda x:  1 if x > 0.05 else (0 if (x <=0.05 and x>=-0.05)  else -1))
     data['Polarity'] = data['Sentiment_rolled'].apply(lambda x:  'Positive' if x ==1  else ('Neutral' if x == 0  else 'Negative'))
     
-    # saving dataframe into json format
-    data.to_json(r'userResults/vaderSentiment.json')
-    data.to_json(r'userResults/vaderSentiment_table.json', orient='table')
-    data.to_json(r'userResults/vaderSentiment_split.json', orient='split')
-
+ 
+    data.to_json(r'userResults/textBlobSentiment.json')
+    data.to_json(r'userResults/textBlobSentiment_table.json', orient='table')
+    data.to_json(r'userResults/textBlobSentiment_split.json', orient='split')
     
     return data
-
-
-
-
-
-    
