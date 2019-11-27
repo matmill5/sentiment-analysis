@@ -37,7 +37,7 @@ def textBlobGo(file):
     for i in range(len(data)):
         data.loc[i,'text']=data.loc[i,'text'].replace("’","'")
 
-    sys.path.insert(0, 'C:\\Users\\gautam\\Desktop\\Tweets_Notebook')
+    #sys.path.insert(0, 'path_contractions_1')
     from contractions_1 import CONTRACTION_MAP
 
     def expand_contractions(text, contraction_mapping=CONTRACTION_MAP):
