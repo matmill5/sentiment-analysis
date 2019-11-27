@@ -21,5 +21,14 @@ print(posCount)
 print(negCount)
 print(neuCount)
 
+outputDict = {"Positive": posCount,
+                "Neutral": neuCount,
+                "Negative": negCount
+                }
+
+f = open("d3Results/testD3Resultpi.json", "w")
+f.write(json.dumps(outputDict, sort_keys=True, indent=4))
+f.close()
+
 # Return this list of results
 #resultList = [posCount, negCount, neuCount]
