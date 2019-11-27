@@ -6,7 +6,7 @@ from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 #from vader import vaderGo
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'])
+ALLOWED_EXTENSIONS = set(['csv'])
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -77,7 +77,7 @@ def upload_form():
 			flash('File successfully uploaded')
 			return redirect('/upload')
 		else:
-			flash('Allowed file types are txt, pdf, png, jpg, jpeg, gif, csv')
+			flash('Allowed file types are csv')
 			return redirect(request.url)
 
 if __name__ == "__main__":
