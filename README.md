@@ -53,16 +53,16 @@ There are a variety of other sources which can be analyized with natural languag
 - [x] Setup python anywhere server
 - [x] Setup local file-directory structure
 - [x] Design ER diagrams
-- [ ] Setup remote-request processing server
+- [x] Setup remote-request processing server
 - [x] Setup remote databases, myDB and kentDB
-- [ ] Design processing-server's program logic (high-level, has many subtasks)
-- [ ] Implement processing-server's design (high-level, has many subtasks)
+- [x] Design processing-server's program logic (high-level, has many subtasks)
+- [x] Implement processing-server's design (high-level, has many subtasks)
 - [x] Design web app, user interface
 - [x] Implement user interface
-- [ ] Connect system components
-- [ ] Test, revise, maintain
-- [ ] Curate all supporting document
-- [ ] Create project presentation slides
+- [x] Connect system components
+- [x] Test, revise, maintain
+- [x] Curate all supporting document
+- [x] Create project presentation slides
 
 ## Authors:
 
