@@ -15,17 +15,17 @@ for item in data["text"].values():
             outputDict[word] = 1
 
 child = []
-node = {"Name": "aName", "Count" : 0}
+node = {"word": "aName", "size" : 0}
 for item in outputDict:
-    node["Name"]=item
-    node["Count"]=outputDict[f'{item}']
+    node["word"]=item
+    node["size"]=outputDict[f'{item}']
     child.append(node.copy())
     #print(item)
 
-#pprint.pprint(child)
+pprint.pprint(child)
 
 #print(json.dumps(outputDict, sort_keys=True, indent=4))
-f = open("static/d3Results/testD3Result.json", "w")
+f = open("static/d3Results/testD3Resultcloud.json", "w")
 f.write(json.dumps(child, sort_keys=True, indent=4))
 f.close()
 #pprint.pprint(outputDict)

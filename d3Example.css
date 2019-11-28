@@ -1,0 +1,53 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #E8E8E8;
+}
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #383838;
+    position: static; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+.navbar h1 {
+    float: left;
+    color: #f2f2f2; /* F2F2F2 */
+    margin-left: 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+#bubble {
+    float: left;
+    width: 50%;
+}
+
+#donut {
+    float: right;
+    width: 40%;
+}
+
+
+div.tooltip-donut {
+    position: absolute;
+    text-align: center;
+    padding: 0.5rem;
+    background: #FFFFFF;
+    border: 1px solid #313639;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: 1.3rem;
+}
+
+svg {
+    margin: 1rem;
+    background-color: #FFFFFF;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #808080; 
+    padding: 3rem;
+}

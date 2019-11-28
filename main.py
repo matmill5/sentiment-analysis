@@ -1,5 +1,6 @@
 import os
 #import magic
+import json
 import urllib.request
 from flask_app import app
 from flask import Flask, flash, request, redirect, render_template
@@ -52,6 +53,16 @@ def do_process():
 #		return "success", 200
 #	else
 #		return "failure", 403
+
+@app.route('/results')
+def results():
+	with app.open_resource('static/d3Results/testD3Resultpi.json') as f:
+		piResults = json.load(f)
+	with app.open_resource('static/d3Results/testD3Result.json') as g:
+		bubbleResults = json.load(g)
+	with app.open_resource('static/d3Results/testD3Resultcloud.json') as h:
+		cloudResults = json.load(h)
+	return render_template('results.html', piResults=piResults, bubbleResults=bubbleResults, cloudResults=cloudResults)
 
 @app.route('/contact')
 def contact():
