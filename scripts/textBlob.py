@@ -141,9 +141,15 @@ def textBlobGo(file):
     data['Sentiment_rolled']= data['Sentiment'].apply(lambda x:  1 if x > 0.05 else (0 if (x <=0.05 and x>=-0.05)  else -1))
     data['Polarity'] = data['Sentiment_rolled'].apply(lambda x:  'Positive' if x ==1  else ('Neutral' if x == 0  else 'Negative'))
     
- 
-    data.to_json(r'userResults/textBlobSentiment.json')
-    data.to_json(r'userResults/textBlobSentiment_table.json', orient='table')
-    data.to_json(r'userResults/textBlobSentiment_split.json', orient='split')
+    #saving data into csv file
+    data.to_csv('userResults/textBlobSentiment.csv', index=False)
+
+
+    df = pd.DataFrame(data, columns= ["Sentiment_rolled", "Polarity"])
+    #saving data into json file
+    df.to_json(r'userResults/textBlobSentiment.json')
+
+    # df.to_json(r'userResults/textBlobSentiment_table.json', orient='table')
+    # df.to_json(r'userResults/textBlobSentiment_split.json', orient='split')
     
-    return data
+    return "Success"

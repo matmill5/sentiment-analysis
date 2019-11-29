@@ -148,12 +148,18 @@ def vaderGo(file):
     data['Polarity'] = data['Sentiment_rolled'].apply(lambda x:  'Positive' if x ==1  else ('Neutral' if x == 0  else 'Negative'))
     
     # saving dataframe into json format
-    data.to_json(r'userResults/vaderSentiment.json')
-    data.to_json(r'userResults/vaderSentiment_table.json', orient='table')
-    data.to_json(r'userResults/vaderSentiment_split.json', orient='split')
+    data.to_csv('userResults/vaderSentiment.csv', index=False)
+
+    df = pd.DataFrame(data, columns= ["Sentiment_rolled", "Polarity"])
+
+
+    # saving dataframe into json format
+    df.to_json(r'userResults/vaderSentiment.json')
+    # data.to_json(r'userResults/vaderSentiment_table.json', orient='table')
+    # data.to_json(r'userResults/vaderSentiment_split.json', orient='split')
 
     
-    return data
+    return "Success"
 
 
 
