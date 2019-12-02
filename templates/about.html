@@ -3,20 +3,17 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="google-signin-client_id" content="716166053466-g7cnkn98o8549ir5jobrmechhghoo8em.apps.googleusercontent.com">
     <title>Sentiment Analysis - About</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='ui/css/about.css') }}">
-    <script src="{{ url_for('static', filename='ui/js/about.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 </head>
 
 <body>
     <header>
+        <!-- Navigation Bar -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{{ url_for('about') }}">Sentiment Analysis</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -24,10 +21,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Navigation Bar -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('upload') }}">Upload CSV</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link my-2 my-sm-0" href="{{ url_for('results') }}">Results</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
@@ -42,7 +43,9 @@
             </div>
         </nav>
     </header>
+    <!-- Parent Container for All Sections -->
     <div id="fullpage">
+        <!-- Introduction Section -->
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
@@ -60,6 +63,7 @@
                 </div>
             </div>
         </div>
+        <!-- Four Easy Steps Section -->
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
@@ -69,16 +73,16 @@
                             process. Consume your report.</h3>
                         <div class="row">
                             <div class="column">
-                                <img src="{{ url_for('static', filename='ui/assets/images/Step1.jpg') }}">
+                                <img src="{{ url_for('static', filename='assets/images/Step1.jpg') }}">
                             </div>
                             <div class="column">
-                                <img src="{{ url_for('static', filename='ui/assets/images/Step2.jpg') }}">
+                                <img src="{{ url_for('static', filename='assets/images/Step2.jpg') }}">
                             </div>
                             <div class="column">
-                                <img src="{{ url_for('static', filename='ui/assets/images/Step3.jpg') }}">
+                                <img src="{{ url_for('static', filename='assets/images/Step3.jpg') }}">
                             </div>
                             <div class="column">
-                                <img src="{{ url_for('static', filename='ui/assets/images/Step4.jpg') }}">
+                                <img src="{{ url_for('static', filename='assets/images/Step4.jpg') }}">
                             </div>
                         </div>
                     </div>
@@ -87,6 +91,7 @@
                 </div>
             </div>
         </div>
+        <!-- Demo Video Section -->
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
@@ -97,13 +102,14 @@
                     </div>
                     <div class="col min-100">
                         <video controls>
-                            <source src="{{ url_for('static', filename='ui/assets/videos/ThumbnailVid.mp4') }}"
+                            <source src="{{ url_for('static', filename='assets/videos/ThumbnailVid.mp4') }}"
                                 type="video/mp4">
                         </video>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Meet the Team Section -->
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
@@ -117,25 +123,26 @@
                 <div class="row">
                     <div class="col min-60">
                         <center><img class="profiles"
-                                src="{{ url_for('static', filename='ui/assets/images/ProfilesMK.png') }}"></center>
+                                src="{{ url_for('static', filename='assets/images/ProfilesMK.png') }}"></center>
                         <p class="bio">Manisha Kumari</p>
                         <p style="text-align: center;">AI Researcher</p>
                     </div>
                     <div class="col min-60">
                         <center><img class="profiles"
-                                src="{{ url_for('static', filename='ui/assets/images/ProfilesMM.png') }}"></center>
+                                src="{{ url_for('static', filename='assets/images/ProfilesMM.png') }}"></center>
                         <p class="bio">Matthew E. Miller</p>
                         <p style="text-align: center;">Principal Software Developer</p>
                     </div>
                     <div class="col min-60">
                         <center><img class="profiles"
-                                src="{{ url_for('static', filename='ui/assets/images/ProfilesLR.png') }}"></center>
+                                src="{{ url_for('static', filename='assets/images/ProfilesLR.png') }}"></center>
                         <p class="bio">Lucki Ratsavong</p>
                         <p style="text-align: center;">Software Engineer</p>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Starting Uploading Section -->
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
@@ -158,6 +165,11 @@
             </div>
         </div>
     </div>
+    <!-- Scripts - At Bottom of page so they load after DOM-elements -->
+    <div>
+    <script src="{{ url_for('static', filename='js/about.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
     <script>
         new fullpage('#fullpage', {
             //options here
@@ -170,6 +182,6 @@
         //methods
         fullpage_api.setAllowScrolling(false);
     </script>
+    </div>
 </body>
-
 </html>

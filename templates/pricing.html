@@ -9,10 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='ui/css/pricing.css') }}">
-    <script src="{{ url_for('static', filename='ui/js/about.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pricing.css') }}">
 </head>
 
 <body>
@@ -28,6 +25,9 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('upload') }}">Upload CSV</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link my-2 my-sm-0" href="{{ url_for('results') }}">Results</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
@@ -106,6 +106,9 @@
             </div>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='js/about.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
     <script>
         new fullpage('#fullpage', {
             //options here

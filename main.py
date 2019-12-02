@@ -1,11 +1,9 @@
 import os
-#import magic
 import json
 import urllib.request
 from flask_app import app
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
-#from vader import vaderGo
 
 ALLOWED_EXTENSIONS = set(['csv'])
 
@@ -56,17 +54,18 @@ def do_process():
 
 @app.route('/results')
 def results():
-	with app.open_resource('static/d3Results/testD3Resultpi.json') as f:
+	with app.open_resource('user/userResults_d3/testD3Resultpi.json') as f:
 		piResults = json.load(f)
-	with app.open_resource('static/d3Results/testD3Result.json') as g:
+	with app.open_resource('user/userResults_d3/testD3Result.json') as g:
 		bubbleResults = json.load(g)
-	with app.open_resource('static/d3Results/testD3Resultcloud.json') as h:
+	with app.open_resource('user/userResults_d3/testD3Resultcloud.json') as h:
 		cloudResults = json.load(h)
 	return render_template('results.html', piResults=piResults, bubbleResults=bubbleResults, cloudResults=cloudResults)
 
 @app.route('/contact')
 def contact():
 	return render_template('contact.html')
+
 @app.route('/upload')
 def upload():
 	return render_template('upload.html')
