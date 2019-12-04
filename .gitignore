@@ -1,9 +1,9 @@
 # ignore config files
 /.vscode
 /SentimentAnalysis
+/models
 /__pycache__
 app.py
 credentials.json
 /userUploads
 /userResults
-/models
