@@ -30,7 +30,7 @@ from keras.preprocessing.text import Tokenizer
 
 #Loading Pre traine Word Embeddings on IMDB, Twitter and Kent Destination dataset
 embeddings_index={}
-f=open(r'Models/Word2VecEmbedding.txt',encoding='utf-8')
+f=open(r'models/Word2VecEmbedding.txt',encoding='utf-8')
 for line in f:
     values=line.split()
     word=values[0]
@@ -39,11 +39,11 @@ for line in f:
 f.close()
 
 #Loading trained model on IMDB dataset
-filename2= "Models/model_lstm_sentimentAnalysis.hdf5"
+filename2= "models/model_lstm_sentimentAnalysis.hdf5"
 loaded_model_LSTM = load_model(filename2) 
 
 #Loading IMDB Clean data to generate word index
-df_imdb=pd.read_csv(r'Models/movie_data.csv', encoding='utf-8')
+df_imdb=pd.read_csv(r'models/movie_data.csv', encoding='utf-8')
 review_line=df_imdb['review']
 tokenizer_obj=Tokenizer()
 tokenizer_obj.fit_on_texts(review_line)
@@ -169,7 +169,7 @@ def sentimentLSTM(file):
         # Substituting multiple spaces with single space
         data.loc[i,'text']  = re.sub(r'\s+', ' ', data.loc[i,'text'] , flags=re.I)
         
-#LSTM
+    #LSTM
     for i in range(len(data)):
         data.loc[i,'text_lstm'] = ' '.join([word for word in data.loc[i,'text'].split() if word in word_index])
 
@@ -182,12 +182,11 @@ def sentimentLSTM(file):
     data['Polarity'] = data['Sentiment_rolled'].apply(lambda x:  'Positive' if x ==1  else ('Neutral' if x == 0  else 'Negative'))
     
     data=data.drop("text_lstm", axis=1)
-    #saving data into csv file
-    data.to_csv('userResults/LSTMSentiment.csv', index=False)
 
-    df = pd.DataFrame(data, columns= ["Sentiment_rolled", "Polarity"])
+    df = pd.DataFrame(data)
     #saving data into json file
-    df.to_json(r'userResults/LSTMSentiment.json')
+    # saving dataframe into json format
+    df.to_json('user/userResults/' +  file.replace('user/userUploads/',"").replace('.csv', "").replace("up_", "rai_") + '.json')
     
      
     return "Success"

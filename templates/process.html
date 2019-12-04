@@ -1,5 +1,85 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <p>This triggers the processing of our user's data that is contained within the user upload directory</p>
-    </body>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sentiment Analysis - About</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ url_for('about') }}">Sentiment Analysis</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Bar -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('upload') }}">Upload CSV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('results') }}">Results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link my-2 my-sm-0" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('login') }}">Log In</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="{{ url_for('signup') }}">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div id="fullpage">
+        <!-- Processed Status Section -->
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col min-100">
+                    </div>
+                    <div class="col min-100">
+                        <h5 style="margin-top: 100px">Processing Status:</h5>
+                        <p style="margin-top: 100px;"> {{ status }} </p>
+                    </div>
+                    <div class="col min-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fullpage Scripts (Styling) -->
+    <div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+        <script>
+            new fullpage('#fullpage', {
+                //options here
+                autoScrolling: true,
+                scrollHorizontally: true,
+                sectionsColor: ['#f2f2f2', '#f2f2f2', '#f2f2f2'],
+                paddingTop: '120px'
+            });
+
+            //methods
+            fullpage_api.setAllowScrolling(false);
+        </script>
+    </div>
+</body>
+
 </html>

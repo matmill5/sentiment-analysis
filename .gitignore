@@ -6,3 +6,4 @@ app.py
 credentials.json
 /userUploads
 /userResults
+/models

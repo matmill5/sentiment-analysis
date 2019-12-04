@@ -37,6 +37,9 @@
                     <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
                 </li>
                 <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('contact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link my-2 my-sm-0" href="{{ url_for('login') }}">Log In</a>
                 </li>
             </ul>
@@ -48,196 +51,259 @@
 </header>
 
 <body>
-    <!-- Create a div where the graph will take place -->
-    <h2>Vader Sentiment Results - PI Chart</h2>
-    <div id="pi-visualization"></div>
+    <div id="fullpage">
+        <!-- Pi Chart Section -->
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col min-100">
+                        <h5 style="margin-top: 80px;">Results Breakdown:</h5>
+                        <p>
+                            Positive: {{ piResults["Positive"] }} <br />
+                            Negative: {{ piResults["Negative"] }} <br />
+                            Neutral: {{ piResults["Neutral"] }}
+                        </p>
+                    </div>
+                    <div class="col min-100">
+                        <!-- Create a div where the graph will take place -->
+                        <h2>Vader - PI Chart</h2>
+                        <div id="pi-visualization"></div>
+                    </div>
+                    <div class="col min-100"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Bubble Chart Section -->
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                        <div class="col min-100">
+                                <h5 style="margin-top: 80px;">Results Sample:</h5>
+                                <p>
+                                        {% for r in bubbleResults[0:5] %}
+                                            {{ r['Name'] }}: {{ r['Count'] }} <br>
+                                        {% endfor %}
+                                </p>
+                            </div>
+                    <div class="col min-100">
+                        <h2>Vader - Bubble Cloud</h2>
+                        <div id="bubble-visualization"></div>
+                    </div>
+                    <div class="col min-100"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Word Cloud Section -->
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                        <div class="col min-100">
+                                <h5 style="margin-top: 80px;">Results Sample:</h5>
+                                <p>
+                                        {% for e in cloudResults[15:20] %}
+                                            {{ e['word'] }}: {{ e['size'] }}<br>
+                                        {% endfor %}
+                                </p>
+                            </div>
+                    <div class="col min-100">
+                        <h2>Vader - Word Cloud</h2>
+                        <div id="cloud-visualization"></div>
+                    </div>
+                    <div class="col min-100"></div>
+                </div>
+            </div>
+        </div>
 
-    <p>
-        Positive: {{ piResults["Positive"] }} <br />
-        Negative: {{ piResults["Negative"] }} <br />
-        Neutral: {{ piResults["Neutral"] }}
-    </p>
+        <!-- Pi Chart Section (Vader, TextBlob, AI) -->
+        <script>
 
-    <h2>Vader Sentiment Results - Bubble Cloud</h2>
-    <div id="bubble-visualization"></div>
+            // set the dimensions and margins of the graph
+            var width = 400
+            height = 400
+            margin = 20
 
-    <h2>Vader Sentiment Results - Word Cloud</h2>
-    <div id="cloud-visualization"></div>
+            // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+            var radius = Math.min(width, height) / 2 - margin
 
-    <script>
-
-        // set the dimensions and margins of the graph
-        var width = 450
-        height = 450
-        margin = 40
-
-        // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-        var radius = Math.min(width, height) / 2 - margin
-
-        // append the svg object to the div called 'my_dataviz'
-        var svg = d3.select("#pi-visualization")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-        // Create dummy data
-        var data = {{ piResults| tojson}};
-
-        // set the color scale
-        //var color = d3.scaleOrdinal()
-        //  .domain(data)
-        //  .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"])
-
-        var color = d3.scaleOrdinal().domain(["Positive", "Negative", "Neutral"]).range(["#7fffd4", "#cd5c5c", "#808080"]);
-
-        // Compute the position of each group on the pie:
-        var pie = d3.pie()
-            .value(function (d) { return d.value; })
-        var data_ready = pie(d3.entries(data))
-
-        // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-        svg
-            .selectAll('whatever')
-            .data(data_ready)
-            .enter()
-            .append('path')
-            .attr('d', d3.arc()
-                .innerRadius(100)         // This is the size of the donut hole
-                .outerRadius(radius)
-            )
-            .attr('fill', function (d) { return (color(d.data.key)) })
-            .attr("stroke", "black")
-            .style("stroke-width", "2px")
-            .style("opacity", 0.7)
-    </script>
-
-    <script type="text/javascript">
-
-        dataset = { "children": {{ bubbleResults | tojson }}};
-
-        var diameter = 550;
-        var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-        var bubble = d3.pack(dataset)
-            .size([diameter, diameter])
-            .padding(1.5);
-
-        var svg = d3.select("#bubble-visualization")
-            .append("svg")
-            .attr("width", diameter)
-            .attr("height", diameter)
-            .attr("class", "bubble");
-
-        var nodes = d3.hierarchy(dataset).sum(function (d) { return d.Count; });
-
-        console.log(nodes)
-
-        var node = svg.selectAll(".node")
-            .data(bubble(nodes).descendants())
-            .enter()
-            .filter(function (d) {
-                return !d.children
-            })
-            .append("g")
-            .attr("class", "node")
-            .attr("transform", function (d) {
-                return "translate(" + d.x + "," + d.y + ")";
-            });
-
-        node.append("title")
-            .text(function (d) {
-                return d.Name + ": " + d.Count;
-            });
-
-        node.append("circle")
-            .attr("r", function (d) {
-                return d.r;
-            })
-            .style("fill", function (d, i) {
-                return color(i);
-            });
-
-        node.append("text")
-            .attr("dy", ".2em")
-            .style("text-anchor", "middle")
-            .text(function (d) {
-                return d.data.Name.substring(0, d.r / 3);
-            })
-            .attr("font-family", "sans-serif")
-            .attr("font-size", function (d) {
-                return d.r / 5;
-            })
-            .attr("fill", "white");
-
-        node.append("text")
-            .attr("dy", "1.3em")
-            .style("text-anchor", "middle")
-            .text(function (d) {
-                return d.data.Count;
-            })
-            .attr("font-family", "Gill Sans", "Gill Sans MT")
-            .attr("font-size", function (d) {
-                return d.r / 5;
-            })
-            .attr("fill", "white");
-
-        d3.select(self.frameElement)
-            .style("height", diameter + "px");
-    </script>
-
-    <script>
-
-        // List of words
-        var myWords = {{ cloudResults| tojson }}
-
-        var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-        // set the dimensions and margins of the graph
-        var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-            width = 450 - margin.left - margin.right,
-            height = 450 - margin.top - margin.bottom;
-
-        // append the svg object to the body of the page
-        var svg = d3.select("#cloud-visualization").append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
-
-        // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
-        // Wordcloud features that are different from one word to the other must be here
-        var layout = d3.layout.cloud()
-            .size([width, height])
-            .words(myWords.map(function (d) { return { text: d.word, size: d.size }; }))
-            .padding(5)        //space between words
-            .rotate(function () { return ~~(Math.random() * 2) * 90; })
-            .fontSize(function (d) { return d.size; })  // font size of words
-            .on("end", draw);
-        layout.start();
-
-        // This function takes the output of 'layout' above and draw the words
-        // Wordcloud features that are THE SAME from one word to the other can be here
-        function draw(words) {
-            svg
+            // append the svg object to the div called 'my_dataviz'
+            var svg = d3.select("#pi-visualization")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
                 .append("g")
-                .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-                .selectAll("text")
-                .data(words)
-                .enter().append("text")
-                .style("font-size", function (d) { return d.size; })
-                .style("fill", "#69b3a2")
-                .attr("text-anchor", "middle")
-                .style("font-family", "Impact")
-                .style("fill", function (d, i) { return color(i); })
-                .attr("transform", function (d) {
-                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+            // Create dummy data
+            var data = {{ piResults| tojson}};
+
+            var color = d3.scaleOrdinal().domain(["Positive", "Negative", "Neutral"]).range(["#2BA32A", "#D52A2A", "#98948E"]);
+
+            // Compute the position of each group on the pie:
+            var pie = d3.pie()
+                .value(function (d) { return d.value; })
+            var data_ready = pie(d3.entries(data))
+
+            // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+            svg
+                .selectAll('whatever')
+                .data(data_ready)
+                .enter()
+                .append('path')
+                .attr('d', d3.arc()
+                    .innerRadius(100)         // This is the size of the donut hole
+                    .outerRadius(radius)
+                )
+                .attr('fill', function (d) { return (color(d.data.key)) })
+                .attr("stroke", "black")
+                .style("stroke-width", "2px")
+                .style("opacity", 0.7)
+        </script>
+
+        <!-- Bubble Cloud -->
+        <script type="text/javascript">
+
+            dataset = { "children": {{ bubbleResults | tojson }}};
+
+            var diameter = 400;
+            var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+            var bubble = d3.pack(dataset)
+                .size([diameter, diameter])
+                .padding(1.5);
+
+            var svg = d3.select("#bubble-visualization")
+                .append("svg")
+                .attr("width", diameter)
+                .attr("height", diameter)
+                .attr("class", "bubble");
+
+            var nodes = d3.hierarchy(dataset).sum(function (d) { return d.Count; });
+
+            console.log(nodes)
+
+            var node = svg.selectAll(".node")
+                .data(bubble(nodes).descendants())
+                .enter()
+                .filter(function (d) {
+                    return !d.children
                 })
-                .text(function (d) { return d.text; });
-        }
-    </script>
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+
+            node.append("title")
+                .text(function (d) {
+                    return d.Name + ": " + d.Count;
+                });
+
+            node.append("circle")
+                .attr("r", function (d) {
+                    return d.r;
+                })
+                .style("fill", function (d, i) {
+                    return color(i);
+                });
+
+            node.append("text")
+                .attr("dy", ".2em")
+                .style("text-anchor", "middle")
+                .text(function (d) {
+                    return d.data.Name.substring(0, d.r / 3);
+                })
+                .attr("font-family", "sans-serif")
+                .attr("font-size", function (d) {
+                    return d.r / 5;
+                })
+                .attr("fill", "white");
+
+            node.append("text")
+                .attr("dy", "1.3em")
+                .style("text-anchor", "middle")
+                .text(function (d) {
+                    return d.data.Count;
+                })
+                .attr("font-family", "Gill Sans", "Gill Sans MT")
+                .attr("font-size", function (d) {
+                    return d.r / 5;
+                })
+                .attr("fill", "white");
+
+            d3.select(self.frameElement)
+                .style("height", diameter + "px");
+        </script>
+        
+        <!-- Word Cloud -->
+        <script>
+
+            // List of words
+            var myWords = {{ cloudResults| tojson }}
+
+            var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+            // Set the dimensions and margins of the graph
+            var margin = { top: 5, right: 5, bottom: 5, left: 5 },
+                width = 400 - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom;
+
+            // Append the svg object to the body of the page
+            var svg = d3.select("#cloud-visualization").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+
+            // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+            // Wordcloud features that are different from one word to the other must be here
+            var layout = d3.layout.cloud()
+                .size([width, height])
+                .words(myWords.map(function (d) { return { text: d.word, size: d.size }; }))
+                .padding(5)        //space between words
+                .rotate(function () { return ~~(Math.random() * 2) * 90; })
+                .fontSize(function (d) { return d.size; })  // font size of words
+                .on("end", draw);
+            layout.start();
+
+            // This function takes the output of 'layout' above and draw the words
+            // Wordcloud features that are THE SAME from one word to the other can be here
+            function draw(words) {
+                svg
+                    .append("g")
+                    .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+                    .selectAll("text")
+                    .data(words)
+                    .enter().append("text")
+                    .style("font-size", function (d) { return d.size; })
+                    .style("fill", "#69b3a2")
+                    .attr("text-anchor", "middle")
+                    .style("font-family", "Impact")
+                    .style("fill", function (d, i) { return color(i); })
+                    .attr("transform", function (d) {
+                        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    })
+                    .text(function (d) { return d.text; });
+            }
+        </script>
+
+        <!-- Fullpage Scripts (Styling) -->
+        <div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+            <script>
+                new fullpage('#fullpage', {
+                    //options here
+                    autoScrolling: true,
+                    scrollHorizontally: true,
+                    sectionsColor: ['#f2f2f2', '#f2f2f2', '#f2f2f2'],
+                    paddingTop: '120px'
+                });
+
+                //methods
+                fullpage_api.setAllowScrolling(false);
+            </script>
+        </div>
 </body>
 
 </html>

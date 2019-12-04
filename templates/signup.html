@@ -31,6 +31,9 @@
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
                     </li>
                     <li class="nav-item">
+                            <a class="nav-link my-2 my-sm-0" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('login') }}">Log In</a>
                     </li>
                 </ul>
@@ -42,46 +45,45 @@
     </header>
     <div id="fullpage">
         <div class="section">
+                        <!--Section heading-->
+            <h2 class="h1-responsive font-weight-bold text-center my-3">Sign Up</h2>
+            <!--Section description-->
+            <p class="text-center w-responsive mx-auto mb-2">Please Sign Up Here.</p>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col min-100">
                     </div>
                     <div class="col min-100">
-                        <form id="loginForm">
+                        <form method="post" action="/signup" id="loginForm">
                             <!-- First and Last Name -->
                             <div class="form-group">
-                                <label for="inputFirstName">First Name and Last Name</label>
-                                <input type="firstName" class="form-control" id="firstNameUser" aria-describedby="firstNameHelp" placeholder="Enter First and Last Name">
+                                <label for="inputName">First Name and Last Name</label>
+                                <input type="inputName" class="form-control" name="inputName" id="inputName" aria-describedby="firstNameHelp" placeholder="Enter First and Last Name">
                             </div>
                             <!-- Email Address -->
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" class="form-control" name="inputEmail" id="inputEmail"
                                     aria-describedby="emailHelp" placeholder="Enter email">
                                 <small id="emailHelp" class="form-text text-muted">We won't share your email.</small>
                             </div>
                             <!-- Password -->
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="inputPassword"
+                                <label for="inputPassword">Password</label>
+                                <input type="password" class="form-control" name="inputPassword" id="inputPassword"
                                     placeholder="Password">
                             </div>
-                            <!-- Confirm Password -->
-                            <div class="form-group">
-                                    <label for="exampleInputPassword1">Confirm Password</label>
-                                    <input type="password" class="form-control" id="confirmPassword"
-                                        placeholder="Confirm Password">
-                                </div>
                             <!-- Check Me Out -->
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Subscribe To Updates</label>
+                                <input type="checkbox" class="form-check-input" name="inputCheck" id="inputCheck">
+                                <label class="form-check-label" for="inputCheck">Subscribe To Updates</label>
                             </div>
                             <!-- Submit Button -->
                             <button type="submit" id="SubmitBtn" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
-                    <div class="col min-100"></div>
+                    <div class="col min-100">
+                        </div>
                 </div>
             </div>
         </div>

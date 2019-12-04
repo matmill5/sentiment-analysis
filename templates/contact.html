@@ -3,71 +3,12 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        /* Style inputs */
-        input[type=text],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            margin-top: 6px;
-            margin-bottom: 16px;
-            resize: vertical;
-        }
-
-        input[type=submit] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-        }
-
-        input[type=submit]:hover {
-            background-color: #45a049;
-        }
-
-        /* Style the container/contact section */
-        .container {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 10px;
-        }
-
-        /* Create two columns that float next to eachother */
-        .column {
-            float: left;
-            width: 50%;
-            margin-top: 6px;
-            padding: 20px;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 600px) {
-
-            .column,
-            input[type=submit] {
-                width: 100%;
-                margin-top: 0;
-            }
-        }
-    </style>
+    <title>Sentiment Analysis - Contact</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 
 <body>
@@ -93,6 +34,9 @@
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link my-2 my-sm-0" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('login') }}">Log In</a>
                     </li>
                 </ul>
@@ -103,47 +47,61 @@
         </nav>
     </header>
     <div id="fullpage">
-        <div class="section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col min-100">
-                        <h2>Responsive Contact Section</h2>
-                        <p>Resize the browser window to see the effect.</p>
+        <!--Section: Contact v.2-->
+<div class="section">
 
-                        <div class="container">
-                            <div style="text-align:center">
-                                <h2>Contact Us</h2>
-                                <p>Swing by for a cup of coffee, or leave us a message:</p>
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-3">Contact us</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-2">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+            a matter of hours to help you.</p>
+    
+        <div class="row">
+            <div class="col min-100"></div>
+                <div class="col min-100">
+                        <form id="contactForm">
+                                <div class="form-group">
+                                        <label for="exampleInputName">Your Name</label>
+                                        <input type="email" class="form-control" id="exampleInputName"
+                                            aria-describedby="nameHelp" placeholder="Your Name">
+                                    </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Your Email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone else.</small>
                             </div>
-                            <div class="row">
-                                <div class="column">
-                                    <img src="{{ url_for('static', filename='assets/images/contactImg.png') }}"
-                                        style="width:75%">
-                                </div>
-                                <div class="column">
-                                    <form action="/action_page.php">
-                                        <label for="fname">First Name</label>
-                                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                                        <label for="lname">Last Name</label>
-                                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                                        <label for="country">Country</label>
-                                        <select id="country" name="country">
-                                            <option value="australia">Australia</option>
-                                            <option value="canada">Canada</option>
-                                            <option value="usa">USA</option>
-                                        </select>
-                                        <label for="subject">Subject</label>
-                                        <textarea id="subject" name="subject" placeholder="Write something.."
-                                            style="height:170px"></textarea>
-                                        <input type="submit" value="Submit">
-                                    </form>
-                                </div>
+                            <div class="form-group">
+                                <label for="exampleInputSubject">Subject</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                               
                             </div>
-                        </div>
+                            <button type="submit" id="SubmitBtn" class="btn btn-primary">Submit</button>
+                        </form>
                     </div>
+                    <div class="col min-100"></div>
                 </div>
-            </div>
         </div>
+    
+    </div>
+    <!--Section: Contact v.2-->
+    <!-- Scripts - At Bottom of page so they load after DOM-elements -->
+    <div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+        <script>
+            new fullpage('#fullpage', {
+                //options here
+                autoScrolling: true,
+                scrollHorizontally: true,
+                sectionsColor: ['#f2f2f2', '#1E90FF', '#DC143C', '#228B22', '#FFD700'],
+                paddingTop: '120px'
+            });
+
+            //methods
+            fullpage_api.setAllowScrolling(false);
+        </script>
     </div>
 
 </body>

@@ -34,6 +34,9 @@
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('pricing') }}">Pricing</a>
                     </li>
                     <li class="nav-item">
+                            <a class="nav-link my-2 my-sm-0" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link my-2 my-sm-0" href="{{ url_for('login') }}">Log In</a>
                     </li>
                 </ul>
@@ -165,6 +168,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Scripts - At Bottom of page so they load after DOM-elements -->
     <div>
     <script src="{{ url_for('static', filename='js/about.js')}}"></script>
