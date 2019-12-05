@@ -69,7 +69,19 @@
                         <h2>Vader - PI Chart</h2>
                         <div id="pi-visualization"></div>
                     </div>
-                    <div class="col min-100"></div>
+                    <div class="col min-100">
+                        <h5 style="margin-top: 80px;">Results Breakdown:</h5>
+                        <p>
+                            Positive: {{ piTBlobResults["Positive"] }} <br />
+                            Negative: {{ piTBlobResults["Negative"] }} <br />
+                            Neutral: {{ piTBlobResults["Neutral"] }}
+                        </p>
+                    </div>
+                    <div class="col min-100">
+                        <!-- Create a div where the graph will take place -->
+                        <h2>Text Blob - PI Chart</h2>
+                        <div id="pi-tb-visualization"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,35 +98,26 @@
                                 </p>
                             </div>
                     <div class="col min-100">
-                        <h2>Vader - Bubble Cloud</h2>
+                        <h2>Bubble Cloud</h2>
                         <div id="bubble-visualization"></div>
                     </div>
-                    <div class="col min-100"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Word Cloud Section -->
-        <div class="section">
-            <div class="container-fluid">
-                <div class="row">
-                        <div class="col min-100">
-                                <h5 style="margin-top: 80px;">Results Sample:</h5>
-                                <p>
-                                        {% for e in cloudResults[15:20] %}
-                                            {{ e['word'] }}: {{ e['size'] }}<br>
-                                        {% endfor %}
-                                </p>
-                            </div>
                     <div class="col min-100">
-                        <h2>Vader - Word Cloud</h2>
-                        <div id="cloud-visualization"></div>
+                        <h5 style="margin-top: 80px;">Results Sample:</h5>
+                        <p>
+                                {% for e in cloudResults[15:20] %}
+                                    {{ e['word'] }}: {{ e['size'] }}<br>
+                                {% endfor %}
+                        </p>
                     </div>
-                    <div class="col min-100"></div>
+            <div class="col min-100">
+                <h2>Word Cloud</h2>
+                <div id="cloud-visualization"></div>
+            </div>
                 </div>
             </div>
         </div>
 
-        <!-- Pi Chart Section (Vader, TextBlob, AI) -->
+        <!-- Pi Chart Section (Vader, TextBlob) -->
         <script>
 
             // set the dimensions and margins of the graph
@@ -135,6 +138,51 @@
 
             // Create dummy data
             var data = {{ piResults| tojson}};
+
+            var color = d3.scaleOrdinal().domain(["Positive", "Negative", "Neutral"]).range(["#2BA32A", "#D52A2A", "#98948E"]);
+
+            // Compute the position of each group on the pie:
+            var pie = d3.pie()
+                .value(function (d) { return d.value; })
+            var data_ready = pie(d3.entries(data))
+
+            // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+            svg
+                .selectAll('whatever')
+                .data(data_ready)
+                .enter()
+                .append('path')
+                .attr('d', d3.arc()
+                    .innerRadius(100)         // This is the size of the donut hole
+                    .outerRadius(radius)
+                )
+                .attr('fill', function (d) { return (color(d.data.key)) })
+                .attr("stroke", "black")
+                .style("stroke-width", "2px")
+                .style("opacity", 0.7)
+        </script>
+
+        <!-- Pi Chart Section (TextBlob) -->
+        <script>
+
+            // set the dimensions and margins of the graph
+            var width = 400
+            height = 400
+            margin = 20
+
+            // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+            var radius = Math.min(width, height) / 2 - margin
+
+            // append the svg object to the div called 'my_dataviz'
+            var svg = d3.select("#pi-tb-visualization")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+            // Create dummy data
+            var data = {{ piTBlobResults| tojson}};
 
             var color = d3.scaleOrdinal().domain(["Positive", "Negative", "Neutral"]).range(["#2BA32A", "#D52A2A", "#98948E"]);
 

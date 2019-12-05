@@ -22,17 +22,25 @@ def about():
 @app.route('/login')
 def login():
 	return render_template('login.html')
-@app.route('/login', methods=["POST"])
+
+@app.route('/login', methods=["GET","POST"])
 def user_login():
 	conn = None
 	cursor = None
 	try:
+		_email = request.form['inputEmail']
+		_password = request.form['inputPassword']
 		conn = mysql.connect()
 		cursor = conn.cursor(pymysql.cursors.DictCursor)
-		#cursor.execute("SELECT * FROM user WHERE name=userName AND password=userPassword")
-		#rows = cursor.fetchall()
-		#table = Results(rows)
-		#table.border = True
+		cursor.execute("SELECT * FROM user WHERE name=userName AND password=userPassword")
+		rows = cursor.fetchall()
+		if(len(rows) == 1):
+			flash('User Logged In Successfully')
+			return redirect('/')
+		else:
+			flash('Login Unsuccessful')
+		table = Results(rows)
+		table.border = True
 		return render_template('login.html', table=table)
 	except Exception as e:
 		print(e)
@@ -125,11 +133,13 @@ def process():
 def results():
 	with app.open_resource('user/userResults_d3/testD3Resultpi.json') as f:
 		piResults = json.load(f)
+	with app.open_resource('user/userResults_d3/testTBlobD3Resultpi.json') as f:
+		piTBlobResults = json.load(f)
 	with app.open_resource('user/userResults_d3/testD3Result.json') as g:
 		bubbleResults = json.load(g)
 	with app.open_resource('user/userResults_d3/testD3Resultcloud.json') as h:
 		cloudResults = json.load(h)
-	return render_template('results.html', piResults=piResults, bubbleResults=bubbleResults, cloudResults=cloudResults)
+	return render_template('results.html', piResults=piResults, bubbleResults=bubbleResults, cloudResults=cloudResults, piTBlobResults=piTBlobResults)
 
 @app.route('/contact')
 def contact():
