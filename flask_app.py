@@ -1,6 +1,6 @@
 from flask import Flask, Response
 
-#UPLOAD_FOLDER = '/home/capstone/sites/SentimentAnalysis/user/userUploads'
+UPLOAD_FOLDER = '/home/capstone/sites/SentimentAnalysis/user/userUploads'
 UPLOAD_FOLDER = 'C:/Users/Matthew/Desktop/Fall 2019/Capstone/Sentiment Analysis/user/userUploads'
 
 app = Flask(__name__)

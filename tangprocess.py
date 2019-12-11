@@ -4,6 +4,8 @@ import pprint
 import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
+#import more tools for the natural language toolkit
+
 
 counters = {"Original Size" : 0 , "Drop Duplicate Size" : 0, "Contains Link" : 0,
 "Mention Paris" : 0, "Mention Tokyo" : 0, "Mention China": 0, 
@@ -36,6 +38,10 @@ df = df.reset_index(drop=True)
 counters['Drop Duplicate Size'] = len(df.index)
 
 data_sentiment = SentimentIntensityAnalyzer()
+
+linkDict = {"Words That Indicate Links" : ["http","https","www",".com"]}
+placeDict = {"Words that Indicate Paris" : ["Paris","paris","paris france"], "Words that indicate Toyko" : ["Toyko", "toyko"]}
+violentDict = {"Words that Indicate" : ["violence", "violent", "blood", "death"]}
 
 for ind in df.index:
     if('http' in df['text'][ind]):
@@ -121,3 +127,4 @@ counters['Conflict Precentage'] = (counters['Conflict Positives'] + counters['Co
 
 #pprint.pprint(results)
 pprint.pprint(counters)
+#print(counters)
